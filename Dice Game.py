@@ -77,10 +77,20 @@ def main():
         input(f"{username1} press enter to roll the dice: ")
         dice1, dice2 = rollDice()
         print(f"{username1} rolled a", dice1, "and a", dice2)
+        else:
         player1Points = calculatePoints(dice1, dice2)
         tplayer1Points = tplayer1Points + player1Points
         print(f"{username1} scored", player1Points, "points!")
         print(f"{username1} has", tplayer1Points, "points!")
+        while dice1 == dice2:
+            print("You rolled a double! Roll again!")
+            dice1, dice2 = rollDice()
+            print(f"{username1} rolled a", dice1, "and a", dice2)
+            player1Points = calculatePoints(dice1, dice2)
+            tplayer1Points = tplayer1Points + player1Points
+            print(f"{username1} scored", player1Points, "points!")
+            print(f"{username1} has", tplayer1Points, "points!")
+            break
         input(f"{username2} press enter to roll the dice: ")
         dice1, dice2 = rollDice()
         print(f"{username2} rolled a", dice1, "and a", dice2)
@@ -88,6 +98,15 @@ def main():
         tplayer2Points = tplayer2Points + player2Points
         print(f"{username2} scored", player2Points, "points!")
         print(f"{username2} has", tplayer2Points, "points!")
+        while dice1 == dice2:
+            print("You rolled a double! Roll again!")
+            dice1, dice2 = rollDice()
+            print(f"{username2} rolled a", dice1, "and a", dice2)
+            player2Points = calculatePoints(dice1, dice2)
+            tplayer2Points = tplayer2Points + player2Points
+            print(f"{username2} scored", player2Points, "points!")
+            print(f"{username2} has", tplayer2Points, "points!")
+            break
         rounds += 1        
     determineWinner(tplayer1Points, tplayer2Points)
     if tplayer1Points > tplayer2Points:
