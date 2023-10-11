@@ -24,7 +24,7 @@ def authenticate(username, password):
 
 # Function to roll dice
 def rollDice():
-    whenToRoll = input("Press enter to roll the dice: ")
+    input("Press enter to roll the dice: ")
     dice1 = random.randint(1, 6)
     dice2 = random.randint(1, 6)
     return dice1, dice2
