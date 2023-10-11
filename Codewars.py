@@ -1,1 +1,5 @@
-#
+# Zonk game
+# Level: 6kyu
+# Date: 04/05/21
+# Description: The game of Zonk is a dice game played by two or more players. Each turn, a player repeatedly rolls a set of 6 dice until they like the total sum of the dice and decide to stop rolling, or get a zonk (a roll of [1, 1, 1, 5, 5, 5], which wipes out their entire score). If two or more players are playing, the player with the highest score wins. If one player is playing, they win if they have a score higher than 300. If they get a zonk, they lose all of their points and their score is reset to 0. If they roll and don't get a zonk, their score is added to their total. If they stop rolling, their score is added to their total. The score for each turn is the sum of the dice if there are no zonks, otherwise it is 0. Write a function that takes a list of lists of dice rolls and returns a list of scores for each player. If there is only one player, return a single score. If there are two or more players, return a sorted list of scores in descending order. If there are no valid rolls for a player, return 0. If there are valid rolls but the player gets a zonk, return 0. If there are valid rolls but the player doesn't stop rolling, return 0. If there are valid rolls but the player stops rolling, return the score.
+# 
