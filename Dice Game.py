@@ -63,16 +63,20 @@ def determineWinner(player1Points, player2Points):
 
 # Main program
 def main():
+    # Define variables for points and rounds.
     player1Points = 0
     player2Points = 0
     tplayer1Points = 0
     tplayer2Points = 0
     rounds = 0
+    # Get player details.
     username1, password1 = getDetails()
     username2, password2 = getDetails()
+    # Authenticate player details.
     if not authenticate(username1, password1) or not authenticate(username2, password2):
         return 1
     print("Authentication successful!")
+    # Roll dice and calculate points.
     while rounds < 5:
         input(f"{username1} press enter to roll the dice: ")
         dice1, dice2 = rollDice()
@@ -104,12 +108,14 @@ def main():
             tplayer2Points = tplayer2Points + player2Points
             print(f"{username2} scored", player2Points, "points!")
             print(f"{username2} has", tplayer2Points, "points!")
-        rounds += 1        
+        rounds += 1
+    # Determine winner.        
     determineWinner(tplayer1Points, tplayer2Points)
     if tplayer1Points > tplayer2Points:
         print(f"{username1} wins with a score of", tplayer1Points)
     elif tplayer2Points > tplayer1Points:
         print(f"{username2} wins with a score of", tplayer2Points)
+    # If total points are equal, allow each player to roll one die until one player gets a higher score.
     else:
         print("It's a draw!")
         while tplayer1Points == tplayer2Points:
